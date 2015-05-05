@@ -27,6 +27,11 @@
       return $this->type;
     }
 
+    public function setType($type)
+    {
+      return $this->type = $type;
+    }
+
     public function getLabel()
     {
       return $this->label;
