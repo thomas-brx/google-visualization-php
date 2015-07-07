@@ -645,7 +645,7 @@
           throw new InvalidQueryException("Column name is required.");
         }
         $column = new SimpleColumn($matches[1]);
-      } else if (preg_match("/^[^\(]+\s*[\+\-\*\/%]" . self::UNQUOTED_LOOKAHEAD . "/", $arg)) // Arithmetic expression not enclosed in a function
+      } else if (preg_match("/[\+\-\*\/%]" . self::UNQUOTED_LOOKAHEAD . "/", $arg)) // Arithmetic expression not enclosed in a function
       {
         $operators = self::getOuterOperators($arg);
         if (preg_match("/[\*\/%]/", implode("", $operators))) // Multiply, divide, or modulo
