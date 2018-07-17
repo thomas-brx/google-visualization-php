@@ -59,9 +59,9 @@
 
     public static function determineSameOrigin()
     {
+      $sameOrigin = FALSE;
       if (function_exists('getallheaders')) // Doesn't seem to work yet
       {
-        $sameOrigin = FALSE;
         $headers = array_keys(getallheaders());
         foreach ($headers as $header)
         {
